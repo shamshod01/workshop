@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "./static/css/main.f8fb4345.css",
+    "main.js": "./static/js/main.0b77675a.js",
+    "static/js/787.c0b0ca5d.chunk.js": "./static/js/787.c0b0ca5d.chunk.js",
+    "static/media/background.png": "./static/media/background.3fbf4ae2ac5aa861b6ea.png",
+    "static/media/Inter-italic.var.woff2?v=3.19": "./static/media/Inter-italic.var.30807be7abc48ba8c73c.woff2",
+    "static/media/Inter-roman.var.woff2?v=3.19": "./static/media/Inter-roman.var.ba4caefcdf5b36b438db.woff2",
+    "static/media/solana.png": "./static/media/solana.88dd9cd2498aebe1ee8c.png",
+    "static/media/bido.png": "./static/media/bido.bd4e4645fa9964412296.png",
+    "static/media/coin2.webp": "./static/media/coin2.a5097ae9f8621fbcdc67.webp",
+    "static/media/bitcoin.png": "./static/media/bitcoin.61e782e60ac9927aad3b.png",
+    "static/media/coin1.jpg": "./static/media/coin1.8bd8da69d52569fee6ab.jpg",
+    "static/media/coin3.webp": "./static/media/coin3.3656e3b3587a13f124d9.webp",
+    "static/media/unisat-logo.svg": "./static/media/unisat-logo.e7870b3e462320ffa777.svg",
+    "index.html": "./index.html",
+    "static/media/circle.svg": "./static/media/circle.2a58cae50c776dab0e4cf00984b02692.svg",
+    "main.f8fb4345.css.map": "./static/css/main.f8fb4345.css.map",
+    "main.0b77675a.js.map": "./static/js/main.0b77675a.js.map",
+    "787.c0b0ca5d.chunk.js.map": "./static/js/787.c0b0ca5d.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f8fb4345.css",
+    "static/js/main.0b77675a.js"
+  ]
+}
