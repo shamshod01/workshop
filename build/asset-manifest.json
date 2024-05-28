@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "./static/css/main.6ec6737e.css",
+    "main.js": "./static/js/main.ec4f0c46.js",
+    "static/js/787.c0b0ca5d.chunk.js": "./static/js/787.c0b0ca5d.chunk.js",
+    "static/media/usd-front.png": "./static/media/usd-front.b5f1ee8e5157905fcac2.png",
+    "index.html": "./index.html",
+    "main.6ec6737e.css.map": "./static/css/main.6ec6737e.css.map",
+    "main.ec4f0c46.js.map": "./static/js/main.ec4f0c46.js.map",
+    "787.c0b0ca5d.chunk.js.map": "./static/js/787.c0b0ca5d.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.6ec6737e.css",
+    "static/js/main.ec4f0c46.js"
+  ]
+}

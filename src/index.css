@@ -1,103 +1,13 @@
-.app {
-    height: 100vh;
-    position: relative;
-    width: 100%;
-    overflow: hidden;
-    background: #212121;
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-.bfc{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 80vh;
-    color: white;
-}
-
-.mint {
-    border: 0.5px solid white;
-    background-color: rgba(255, 255, 255, 1);
-    border-radius: 10px;
-    padding: 30px;
-    min-width: 30vw;
-    color: black;
-}
-
-.nft {
-    margin: 10px;
-    border: 0.5px solid white;
-    background-color: rgba(255, 255, 255, 0.7);
-    border-radius: 10px;
-    padding: 10px;
-    box-shadow: 1px 3px 6px 0.6px #8D39D0;
-}
-
-.form-control:valid {
-    background-color: #ffffff !important;
-    color: black;
-}
-
-.coming-soon-modal {
-    height: 10rem;
-}
-
-.bfc-btn {
-    background-color: #8D39D0;
-    background: linear-gradient(90deg, rgba(141,57,208,1) 0%, rgba(158,70,228,1) 48%, rgb(192, 81, 248) 100%)!important;
-
-    color: white;
-    border: 0.5px solid white;
-    border-radius: 10px;
-    padding: 10px;
-    margin-top: 10px;
-    width: 100%;
-    height: 50px;
-    margin-bottom: 20px;
-    cursor: pointer;
-}
-
-.bfc-btn:disabled {
-    background-color: #8d8d8d;
-    color: white;
-    border: 0.5px solid #8d8d8d;
-    border-radius: 10px;
-    padding: 10px;
-    margin-top: 10px;
-    width: 15rem;
-    margin-bottom: 20px;
-    cursor: pointer;
-}
-
-.bfc-btn-disabled {
-    background-color: #8d8d8d;
-    color: white;
-    border: 0.5px solid #8d8d8d;
-    border-radius: 10px;
-    padding: 10px;
-    margin-top: 10px;
-    width: 15rem;
-    margin-bottom: 20px;
-    cursor: pointer;
-}
-
-.btn-wallet {
-    background-color: #8D39D0!important;
-}
-
-.custom-control-input:checked~.custom-control-label::before {
-    color: #fff!important;
-    border-color: #8D39D0!important;
-}
-
-.custom-control-input:checked~.custom-control-label.red::before {
-    background-color: #8D39D0!important;
-}
-
-.custom-control-input:checked~.custom-control-label.green::before {
-    background-color: green!important;
-}
-
-.asset {
-    border-radius: 50%;
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
 }
