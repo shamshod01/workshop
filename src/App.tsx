@@ -9,6 +9,7 @@ import { SDKProvider } from '@tma.js/sdk-react';
 const App: React.FC = () => {
     return (
         <SDKProvider acceptCustomStyles debug={true}>
+            <h1>Flip Image</h1>
         <div className="App">
             <FlipImage frontImage={frontImage} backImage={backImage} />
         </div>
