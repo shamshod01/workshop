@@ -68,24 +68,24 @@ const FlipImage: React.FC<FlipImageProps> = ({ frontImage, backImage }) => {
         >
             <div>
                 <h2>authData</h2>
-                {
-                    initData && initDataRows && <div>
-                    <br/>
-                    <p>{'start of init data '}{JSON.stringify(initDataRows)} {' end of init data'}</p>
-                    <br/>
-                    <h4>
-                       date: {initData.authDate.toLocaleString()}
-                    </h4>
-                    <h4>
-                       time:  {initData.authDate.getTime() / 1000}
-                    </h4>
-                    <h4>
-                     hash -    {initData.hash}
-                    </h4>
+                {/*{*/}
+                {/*    initData && initDataRows && <div>*/}
+                {/*    <br/>*/}
+                {/*    <p>{'start of init data '}{JSON.stringify(initDataRows)} {' end of init data'}</p>*/}
+                {/*    <br/>*/}
+                {/*    <h4>*/}
+                {/*       date: {initData.authDate.toLocaleString()}*/}
+                {/*    </h4>*/}
+                {/*    <h4>*/}
+                {/*       time:  {initData.authDate.getTime() / 1000}*/}
+                {/*    </h4>*/}
+                {/*    <h4>*/}
+                {/*     hash -    {initData.hash}*/}
+                {/*    </h4>*/}
 
 
-                    </div>
-                }
+                {/*    </div>*/}
+                {/*}*/}
             </div>
             <div className="flipper">
                 <img className="front" src={frontImage} alt="Front" />
