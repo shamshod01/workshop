@@ -67,14 +67,6 @@ const FlipImage: React.FC<FlipImageProps> = ({ frontImage, backImage }) => {
             onClick={handleFlip}
         >
             <div>
-                <h2>updated</h2>
-                {initData && initData.user && <div>
-                    <h3>{initData.user.id.toString()}</h3>
-                    <h3>{initData.user.firstName}</h3>
-                    <h3>{initData.user.lastName}</h3>
-                    <h3>{initData.user.username}</h3>
-                </div>}
-
                 <h2>authData</h2>
                 {
                     initData && initDataRows && <div>
