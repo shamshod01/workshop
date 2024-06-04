@@ -71,7 +71,7 @@ const FlipImage: React.FC<FlipImageProps> = ({ frontImage, backImage }) => {
                 {
                     initData && initDataRows && <div>
                     <br/>
-                    <p>{'start of init data '}{initDataRows} {' end of init data'}</p>
+                    <p>{'start of init data '}{JSON.stringify(initDataRows)} {' end of init data'}</p>
                     <br/>
                     <h4>
                        date: {initData.authDate.toLocaleString()}
