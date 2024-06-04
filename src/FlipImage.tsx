@@ -70,12 +70,6 @@ const FlipImage: React.FC<FlipImageProps> = ({ frontImage, backImage }) => {
                 <h2>authData</h2>
                 {
                     initData && initDataRows && <div>
-                        {initDataRows.map((row, index) => (
-                            <div key={index}>
-                                <h3>{row.title}</h3>
-                                <p>{row.value}</p>
-                            </div>
-                        ))}
                     <br/>
                     <p>{'start of init data '}{initDataRows} {' end of init data'}</p>
                     <br/>
