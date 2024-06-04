@@ -73,8 +73,33 @@ const FlipImage: React.FC<FlipImageProps> = ({ frontImage, backImage }) => {
                     <h3>{initData.user.firstName}</h3>
                     <h3>{initData.user.lastName}</h3>
                     <h3>{initData.user.username}</h3>
-
                 </div>}
+
+                <h2>authData</h2>
+                {
+                    initData && initDataRows && <div>
+                        {initDataRows.map((row, index) => (
+                            <div key={index}>
+                                <h3>{row.title}</h3>
+                                <p>{row.value}</p>
+                            </div>
+                        ))}
+                    <br/>
+                    <p>{'start of init data '}{initDataRows} {' end of init data'}</p>
+                    <br/>
+                    <h4>
+                       date: {initData.authDate.toLocaleString()}
+                    </h4>
+                    <h4>
+                       time:  {initData.authDate.getTime() / 1000}
+                    </h4>
+                    <h4>
+                     hash -    {initData.hash}
+                    </h4>
+
+
+                    </div>
+                }
             </div>
             <div className="flipper">
                 <img className="front" src={frontImage} alt="Front" />
