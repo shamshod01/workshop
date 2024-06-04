@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "./static/css/main.6ec6737e.css",
-    "main.js": "./static/js/main.5bb4c3c6.js",
+    "main.js": "./static/js/main.ee1a8aae.js",
     "static/js/787.c0b0ca5d.chunk.js": "./static/js/787.c0b0ca5d.chunk.js",
     "static/media/usd-front.png": "./static/media/usd-front.b5f1ee8e5157905fcac2.png",
     "index.html": "./index.html",
     "main.6ec6737e.css.map": "./static/css/main.6ec6737e.css.map",
-    "main.5bb4c3c6.js.map": "./static/js/main.5bb4c3c6.js.map",
+    "main.ee1a8aae.js.map": "./static/js/main.ee1a8aae.js.map",
     "787.c0b0ca5d.chunk.js.map": "./static/js/787.c0b0ca5d.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.6ec6737e.css",
-    "static/js/main.5bb4c3c6.js"
+    "static/js/main.ee1a8aae.js"
   ]
 }
