@@ -55,6 +55,7 @@ const FlipImage: React.FC<FlipImageProps> = ({ frontImage, backImage }) => {
         if (flipSound.current) {
             flipSound.current.play();
         }
+        shareLink();
         setIsFlipped(true);
         setIsMoving(true);
         setTimeout(() => {
