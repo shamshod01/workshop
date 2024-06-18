@@ -1,6 +1,6 @@
 // src/FlipImage.tsx
 import React, {useState, useEffect, useRef, useMemo} from 'react';
-import { useInitData, useLaunchParams, type User } from '@tma.js/sdk-react';
+import {initUtils, useInitData, useLaunchParams, type User} from '@tma.js/sdk-react';
 
 import './FlipImage.css';
 interface FlipImageProps {
@@ -15,6 +15,8 @@ const FlipImage: React.FC<FlipImageProps> = ({ frontImage, backImage }) => {
     const flipSound = useRef<HTMLAudioElement | null>(null);
     const initDataRaw = useLaunchParams().initDataRaw;
     const initData = useInitData();
+
+    const utils = initUtils();
     const initDataRows = useMemo<any[] | undefined>(() => {
         if (!initData || !initDataRaw) {
             return;
@@ -61,7 +63,18 @@ const FlipImage: React.FC<FlipImageProps> = ({ frontImage, backImage }) => {
         }, 2000);
     };
 
+    const shareLink = () => {
+        if (utils && initData?.user)
+            utils.openTelegramLink(
+                'https://t.me/share/url?url=https://t.me/TheLastPie_bot/lastpie?startapp=' + initData?.user.id,
+            );
+    }
     return (
+        <div>
+            <button
+            onClick={shareLink}
+            >share</button>
+
         <div
             className={`flip-container ${isFlipped ? 'flipped' : ''} ${isMoving ? 'moving-up' : ''}`}
             onClick={handleFlip}
@@ -91,6 +104,7 @@ const FlipImage: React.FC<FlipImageProps> = ({ frontImage, backImage }) => {
                 <img className="front" src={frontImage} alt="Front" />
                 <img className="back" src={backImage} alt="Back" />
             </div>
+        </div>
         </div>
     );
 };
