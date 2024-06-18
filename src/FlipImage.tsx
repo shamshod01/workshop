@@ -83,7 +83,7 @@ const FlipImage: React.FC<FlipImageProps> = ({ frontImage, backImage }) => {
             onClick={handleFlip}
         >
             <div>
-                <h2>share AUTH</h2>
+                <h2>share AUTH here</h2>
                 {
                     initData && initDataRows && <div>
                     <br/>
