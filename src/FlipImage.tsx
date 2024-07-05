@@ -90,16 +90,8 @@ const FlipImage: React.FC<FlipImageProps> = ({ frontImage, backImage }) => {
                     <p>{'start of init data '}{JSON.stringify(initDataRows)} {' end of init data'}</p>
                     <br/>
                     <h4>
-                       date: {initData.authDate.toLocaleString()}
+                       START OF DATA: {JSON.stringify(initData)}
                     </h4>
-                    <h4>
-                       time:  {initData.authDate.getTime() / 1000}
-                    </h4>
-                    <h4>
-                     hash -    {initData.hash}
-                    </h4>
-
-
                     </div>
                 }
             </div>
