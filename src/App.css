@@ -7,3 +7,84 @@
   height: 100vh;
   background-color: #f0f0f0;
 }
+
+/* Non-Telegram Fallback Styles */
+.non-telegram-fallback {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 20px;
+}
+
+.fallback-content {
+  background: white;
+  border-radius: 20px;
+  padding: 40px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+  text-align: center;
+  max-width: 500px;
+  width: 100%;
+}
+
+.fallback-content h1 {
+  color: #333;
+  margin-bottom: 20px;
+  font-size: 2.5rem;
+}
+
+.fallback-content > p {
+  color: #666;
+  margin-bottom: 30px;
+  font-size: 1.1rem;
+  line-height: 1.5;
+}
+
+.telegram-info {
+  background: #f8f9fa;
+  border-radius: 12px;
+  padding: 25px;
+  margin-bottom: 25px;
+  text-align: left;
+}
+
+.telegram-info h3 {
+  color: #333;
+  margin-bottom: 15px;
+  font-size: 1.2rem;
+}
+
+.telegram-info ol {
+  color: #555;
+  line-height: 1.8;
+  padding-left: 20px;
+}
+
+.telegram-info li {
+  margin-bottom: 8px;
+}
+
+.demo-note {
+  background: #fff3cd;
+  border: 1px solid #ffeaa7;
+  border-radius: 8px;
+  padding: 15px;
+  color: #856404;
+}
+
+.demo-note p {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .fallback-content {
+    padding: 30px 20px;
+  }
+  
+  .fallback-content h1 {
+    font-size: 2rem;
+  }
+}
