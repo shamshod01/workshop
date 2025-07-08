@@ -1,6 +1,6 @@
 // src/FlipImage.tsx
 import React, {useState, useEffect, useRef, useMemo} from 'react';
-import { useLaunchParams } from '@telegram-apps/sdk-react';
+import {useLaunchParams, useRawInitData,} from '@telegram-apps/sdk-react';
 
 
 import './FlipImage.css';
@@ -15,7 +15,7 @@ const FlipImage: React.FC<FlipImageProps> = ({ frontImage, backImage }) => {
     const [isMoving, setIsMoving] = useState(false);
     const flipSound = useRef<HTMLAudioElement | null>(null);
     const initDataRaw = useLaunchParams();
-
+    const rawInitData = useRawInitData();
 
     const initDataRows = useMemo<any[] | undefined>(() => {
         if (!initDataRaw) {
@@ -57,6 +57,7 @@ const FlipImage: React.FC<FlipImageProps> = ({ frontImage, backImage }) => {
                     <br/>
                     <p>{'start of init data '}{JSON.stringify(initDataRows)} {' end of init data'}</p>
                     <br/>
+                    <p>{'raw init data: '}{rawInitData} {' ends here'}</p>
                     </div>
                 }
             </div>
