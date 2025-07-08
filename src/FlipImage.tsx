@@ -1,6 +1,7 @@
 // src/FlipImage.tsx
 import React, {useState, useEffect, useRef, useMemo} from 'react';
-import {initUtils, useInitData, useLaunchParams, type User} from '@tma.js/sdk-react';
+import { useLaunchParams } from '@telegram-apps/sdk-react';
+
 
 import './FlipImage.css';
 interface FlipImageProps {
@@ -13,37 +14,18 @@ const FlipImage: React.FC<FlipImageProps> = ({ frontImage, backImage }) => {
     const [flipCount, setFlipCount] = useState(0);
     const [isMoving, setIsMoving] = useState(false);
     const flipSound = useRef<HTMLAudioElement | null>(null);
-    const initDataRaw = useLaunchParams().initDataRaw;
-    const initData = useInitData();
+    const initDataRaw = useLaunchParams();
 
-    const utils = initUtils();
+
     const initDataRows = useMemo<any[] | undefined>(() => {
-        if (!initData || !initDataRaw) {
+        if (!initDataRaw) {
             return;
         }
-        const {
-            hash,
-            queryId,
-            chatType,
-            chatInstance,
-            authDate,
-            startParam,
-            canSendAfter,
-            canSendAfterDate,
-        } = initData;
+
         return [
             { title: 'raw', value: initDataRaw },
-            { title: 'auth_date', value: authDate.toLocaleString() },
-            { title: 'auth_date (raw)', value: authDate.getTime() / 1000 },
-            { title: 'hash', value: hash },
-            { title: 'can_send_after', value: canSendAfterDate?.toISOString() },
-            { title: 'can_send_after (raw)', value: canSendAfter },
-            { title: 'query_id', value: queryId },
-            { title: 'start_param', value: startParam },
-            { title: 'chat_type', value: chatType },
-            { title: 'chat_instance', value: chatInstance },
         ];
-    }, [initData, initDataRaw]);
+    }, [initDataRaw]);
 
 
     useEffect(() => {
@@ -55,7 +37,6 @@ const FlipImage: React.FC<FlipImageProps> = ({ frontImage, backImage }) => {
         if (flipSound.current) {
             flipSound.current.play();
         }
-        shareLink();
         setIsFlipped(true);
         setIsMoving(true);
         setTimeout(() => {
@@ -64,42 +45,21 @@ const FlipImage: React.FC<FlipImageProps> = ({ frontImage, backImage }) => {
         }, 2000);
     };
 
-    const shareLink = () => {
-        if (utils && initData?.user)
-            utils.openTelegramLink(
-                'https://t.me/share/url?url=https://t.me/TheLastPie_bot/lastpie?startapp=' + initData?.user.id,
-            );
-    }
+
     return (
         <div>
-            <button
-            onClick={shareLink}
-            >
-                SHARE
-            </button>
 
-        <div
-            className={`flip-container ${isFlipped ? 'flipped' : ''} ${isMoving ? 'moving-up' : ''}`}
-            onClick={handleFlip}
-        >
+
             <div>
                 <h2>share AUTH here</h2>
                 {
-                    initData && initDataRows && <div>
+                    initDataRows && <div>
                     <br/>
                     <p>{'start of init data '}{JSON.stringify(initDataRows)} {' end of init data'}</p>
                     <br/>
-                    <h4>
-                       START OF DATA: {JSON.stringify(initData)}
-                    </h4>
                     </div>
                 }
             </div>
-            <div className="flipper">
-                <img className="front" src={frontImage} alt="Front" />
-                <img className="back" src={backImage} alt="Back" />
-            </div>
-        </div>
         </div>
     );
 };
