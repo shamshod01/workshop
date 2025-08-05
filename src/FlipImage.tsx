@@ -1,6 +1,6 @@
 // src/FlipImage.tsx
 import React, { useState, useEffect, useRef, useMemo } from 'react';
-import { useLaunchParams, useRawInitData } from '@telegram-apps/sdk-react';
+import { useLaunchParams, useRawInitData, hapticFeedbackImpactOccurred } from '@telegram-apps/sdk-react';
 import './FlipImage.css';
 
 interface FlipImageProps {
@@ -53,11 +53,23 @@ const FlipImage: React.FC<FlipImageProps> = ({ frontImage, backImage }) => {
             setIsLoggedIn(true);
         }
     }, [mockUser, initDataRaw]);
-
+    const vibrate = () => {
+        enum vibrationTypes {
+            LIGHT = 'light',//indicates a collision between small or lightweight UI objects.
+            MEDIUM = 'medium',//indicates a collision between medium-sized or medium-weight UI objects.
+            STRONG = 'heavy',// indicates a collision between large or heavyweight UI objects.
+            RIGID = 'rigid', // indicates a collision between hard or inflexible UI objects.
+            SOFT = 'soft',//indicates a collision between soft or flexible UI objects.
+        }
+        if(hapticFeedbackImpactOccurred.isAvailable()) {
+            hapticFeedbackImpactOccurred(vibrationTypes.LIGHT);
+        }
+    }
     const handleFlip = () => {
         if (flipSound.current) {
             flipSound.current.play();
         }
+        vibrate();
         setIsFlipped(true);
         setIsMoving(true);
         setFlipCount(prev => prev + 1);

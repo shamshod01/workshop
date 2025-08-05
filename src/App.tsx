@@ -15,6 +15,7 @@ const App: React.FC = () => {
 
     return (
         <div className="App">
+            <h1>Vibrate Test</h1>
             {isTelegramApp ? (
                 <FlipImage frontImage={frontImage} backImage={backImage} />
             ) : (
