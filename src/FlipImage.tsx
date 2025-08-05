@@ -175,7 +175,7 @@ const FlipImage: React.FC<FlipImageProps> = ({ frontImage, backImage }) => {
                     </div>
 
                     {/* Coin Flip Game */}
-                    <div className="game-section">
+                    <div className="game-section"    onClick={handleFlip}>
                         <h3>🎲 Flip the Coin</h3>
                         <div className={`flip-container ${isMoving ? 'moving-up' : ''}`}>
                             <div className={`flipper ${isFlipped ? 'flipped' : ''}`}>
@@ -183,13 +183,12 @@ const FlipImage: React.FC<FlipImageProps> = ({ frontImage, backImage }) => {
                                     <img src={frontImage} alt="Front" />
                                 </div>
                                 <div className="back">
-                                    <img src={backImage} alt="Back" />
+                                    <img src={backImage} alt="Back" width={20} height={20}/>
                                 </div>
                             </div>
                         </div>
                         <button 
                             className="flip-btn"
-                            onClick={handleFlip}
                             disabled={isMoving}
                         >
                             {isMoving ? 'Flipping...' : 'Flip Coin!'}
