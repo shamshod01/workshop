@@ -1,6 +1,6 @@
 // src/FlipImage.tsx
 import React, { useState, useEffect, useRef, useMemo } from 'react';
-import { useLaunchParams, useRawInitData, hapticFeedbackImpactOccurred } from '@telegram-apps/sdk-react';
+import { useLaunchParams, useRawInitData, hapticFeedback } from '@telegram-apps/sdk-react';
 import './FlipImage.css';
 
 interface FlipImageProps {
@@ -61,9 +61,9 @@ const FlipImage: React.FC<FlipImageProps> = ({ frontImage, backImage }) => {
             RIGID = 'rigid', // indicates a collision between hard or inflexible UI objects.
             SOFT = 'soft',//indicates a collision between soft or flexible UI objects.
         }
-        if(hapticFeedbackImpactOccurred.isAvailable()) {
-            hapticFeedbackImpactOccurred(vibrationTypes.LIGHT);
-        }
+        if (hapticFeedback.impactOccurred.isAvailable()) {
+            hapticFeedback.impactOccurred('medium');
+          }
     }
     const handleFlip = () => {
         if (flipSound.current) {
@@ -135,45 +135,8 @@ const FlipImage: React.FC<FlipImageProps> = ({ frontImage, backImage }) => {
             ) : (
                 /* User Profile and Game Section */
                 <div className="user-section">
-                    {/* User Profile */}
-                    <div className="user-profile">
-                        <div className="profile-header">
-                            <div className="profile-avatar">
-                                {mockUser?.photo_url ? (
-                                    <img src={mockUser.photo_url} alt="Profile" />
-                                ) : (
-                                    <div className="avatar-placeholder">
-                                        {mockUser?.first_name?.charAt(0) || 'U'}
-                                    </div>
-                                )}
-                            </div>
-                            <div className="profile-info">
-                                <h3>{mockUser?.first_name} {mockUser?.last_name}</h3>
-                                <p>@{mockUser?.username || 'user'}</p>
-                                <span className="user-id">ID: {mockUser?.id}</span>
-                            </div>
-                            <button className="logout-btn" onClick={handleLogout}>
-                                Logout
-                            </button>
-                        </div>
-                    </div>
-
-                    {/* Game Stats */}
-                    <div className="game-stats">
-                        <div className="stat-card">
-                            <h4>Total Flips</h4>
-                            <p>{flipCount}</p>
-                        </div>
-                        <div className="stat-card">
-                            <h4>Wins</h4>
-                            <p>{Math.floor(flipCount / 2)}</p>
-                        </div>
-                        <div className="stat-card">
-                            <h4>Win Rate</h4>
-                            <p>{flipCount > 0 ? Math.round((Math.floor(flipCount / 2) / flipCount) * 100) : 0}%</p>
-                        </div>
-                    </div>
-
+                    <h1>Haptic Feedback {hapticFeedback.isSupported() ? '✅ Supported' : '❌ Not Supported'}</h1>
+                    <h1>Haptic Feedback {hapticFeedback.impactOccurred.isAvailable() ? '✅ Available' : '❌ Not Available'}</h1>
                     {/* Coin Flip Game */}
                     <div className="game-section"    onClick={handleFlip}>
                         <h3>🎲 Flip the Coin</h3>
@@ -181,9 +144,6 @@ const FlipImage: React.FC<FlipImageProps> = ({ frontImage, backImage }) => {
                             <div className={`flipper ${isFlipped ? 'flipped' : ''}`}>
                                 <div className="front">
                                     <img src={frontImage} alt="Front" />
-                                </div>
-                                <div className="back">
-                                    <img src={backImage} alt="Back" width={20} height={20}/>
                                 </div>
                             </div>
                         </div>
